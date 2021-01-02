@@ -2,10 +2,14 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
-  findOne() {
-    return {
-      name: 'prashant',
-      email: 'pras.ghim@gmai.com',
-    };
+  users = [
+    { username: 'prashant', password: 'admin123' },
+    { username: 'bob', password: '12345' },
+  ];
+
+  findOne(username, password) {
+    return this.users.find(u => {
+      return u.username === username && u.password === password;
+    });
   }
 }
