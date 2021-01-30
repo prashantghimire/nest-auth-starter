@@ -8,7 +8,7 @@ export class UsersService {
   ];
 
   findOne(username, password) {
-    return this.users.find(u => {
+    return this.users.find((u) => {
       return u.username === username && u.password === password;
     });
   }
