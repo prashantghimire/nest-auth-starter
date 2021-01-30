@@ -7,8 +7,7 @@ export class AuthService {
   constructor(
     private userService: UsersService,
     private jwtService: JwtService,
-  ) {
-  }
+  ) {}
 
   async login(user: any) {
     if (!this.userService.findOne(user.username, user.password)) {

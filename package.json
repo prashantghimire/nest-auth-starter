@@ -105,5 +105,10 @@
       "@typescript-eslint/no-explicit-any": "off",
       "prettier/prettier": "off"
     }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "endOfLine": "auto"
   }
 }
