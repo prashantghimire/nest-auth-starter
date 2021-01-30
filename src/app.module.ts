@@ -7,9 +7,9 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     AuthModule,
     UsersModule,
-    ConfigModule.forRoot(),
   ],
   controllers: [AppController],
   providers: [AppService],
