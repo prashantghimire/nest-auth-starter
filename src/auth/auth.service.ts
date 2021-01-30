@@ -15,9 +15,8 @@ export class AuthService {
   }
 
   async login(user: any) {
-
     if (!this.userService.findOne(user.username, user.password)) {
-      return new UnauthorizedException();
+      throw new UnauthorizedException();
     }
 
     const payload = { username: user.username, sub: 'user' };

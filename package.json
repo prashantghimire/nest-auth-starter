@@ -10,6 +10,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
+    "start:d": "nest start --watch",
     "start:dev": "nest build --watch --webpack --webpackPath webpack-hmr.config.js",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
