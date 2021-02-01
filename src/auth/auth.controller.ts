@@ -8,10 +8,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
-  async login(@Body() req) {
-    return this.authService.login({
-      username: req.username,
-      password: req.password,
-    });
+  async login(@Body() loginDto) {
+    return this.authService.login(loginDto);
   }
 }
