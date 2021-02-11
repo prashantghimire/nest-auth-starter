@@ -5,8 +5,8 @@ import { compare, genSaltSync, hashSync } from 'bcryptjs';
 export class CryptoService {
   private salt = genSaltSync(10);
 
-  hashPassword(userDto: string) {
-    return hashSync(userDto, this.salt);
+  hashPassword(password: string) {
+    return hashSync(password, this.salt);
   }
 
   async matches(password: string, hash: string) {

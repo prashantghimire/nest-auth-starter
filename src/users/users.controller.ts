@@ -8,6 +8,7 @@ import {
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import * as _ from 'lodash';
+import { UserCreateRequestDto } from '../interfaces/user-create-request-dto';
 
 @Controller('users')
 export class UsersController {
@@ -16,7 +17,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post('')
-  async createUser(@Body() userCreateDTO) {
+  async createUser(@Body() userCreateDTO: UserCreateRequestDto) {
     try {
       const result = await this.usersService.createUser(userCreateDTO);
       console.log(result, 'result');

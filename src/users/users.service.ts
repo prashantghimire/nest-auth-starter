@@ -3,6 +3,7 @@ import { User } from '../models/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CryptoService } from '../shared/crypto.service';
+import { UserCreateRequestDto } from '../interfaces/user-create-request-dto';
 
 @Injectable()
 export class UsersService {
@@ -28,7 +29,7 @@ export class UsersService {
     return null;
   }
 
-  async createUser(userDto: any) {
+  async createUser(userDto: UserCreateRequestDto) {
     const hashedPassword = this.cryptoService.hashPassword(userDto.password);
     const user = {
       email: userDto.email,
