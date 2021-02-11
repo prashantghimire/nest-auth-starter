@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   HttpException,
   HttpStatus,
   Logger,
@@ -26,5 +27,11 @@ export class UsersController {
       console.log(e);
       throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
     }
+  }
+
+  @Delete('')
+  async deleteUser() {
+    this.logger.log('request received');
+    return 'deleted';
   }
 }
