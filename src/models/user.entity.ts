@@ -2,15 +2,15 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('uuid', { name: 'ID' })
   id: string;
 
-  @Column()
+  @Column({ name: 'EMAIL' })
   email: string;
 
-  @Column()
+  @Column({ name: 'FULL_NAME' })
   fullName: string;
 
-  @Column()
+  @Column({ name: 'HASHED_PASSWORD' })
   hashedPassword: string;
 }

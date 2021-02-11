@@ -13,6 +13,9 @@ export class UsersService {
 
   async findOne(email, password) {
     const user = await this.usersRepository.findOne({ where: { email } });
+
+    if (!user) return null;
+
     const passwordMatch = await this.cryptoService.matches(
       password,
       user.hashedPassword,
